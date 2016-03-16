@@ -38,7 +38,7 @@
   <gap:plugin name="org.apache.cordova.vibration"/>
   <gap:plugin name="org.apache.cordova.dialogs" />
   <gap:plugin name="com.ionic.keyboard" />
-
+  <gap:plugin name="phonegap-plugin-push" source="npm" version="1.4.5" />
   <preference name="android-build-tool" value="gradle" />	
   <icon src="icon.png"/>
   <icon src="www/res/icon/android/icon-36-ldpi.png" gap:platform="android" gap:qualifier="ldpi"/>
@@ -64,10 +64,10 @@
   <gap:splash src="www/res/screen/ios/screen-iphone-portrait-568h-2x.png" gap:platform="ios" width="640" height="1136"/>
   <gap:splash src="www/res/screen/ios/screen-ipad-portrait.png" gap:platform="ios" width="768" height="1024"/>
   <gap:splash src="www/res/screen/ios/screen-ipad-landscape.png" gap:platform="ios" width="1024" height="768"/>
-  <gap:splash src="www/res/screen/windows-phone/screen-portrait.png" gap:platform="winphone"/>
+ <gap:splash src="www/res/screen/windows-phone/screen-portrait.png" gap:platform="winphone"/>
   <preference name="WindowsToastCapable" value="true" />
+  
   <access origin="*"/>
-
   <plugin name="cordova-plugin-whitelist" version="1"/>
   <allow-navigation href="http://himanshuverma.co.in/godrej/*" />
   <allow-intent href="http://*/*"/>

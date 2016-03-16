@@ -28,7 +28,7 @@
         <script src="js/vendor/bootstrap.min.js"></script>
 
         <script src="js/main.js"></script>
-       
+        
         <script type="text/javascript" charset="utf-8">
 
     // Wait for device API libraries to load
@@ -44,21 +44,8 @@
         // Now safe to use device APIs
 		//alert("Device Ready")
 		//push init
-		move_on();
-		
-		
-	////////////
-	
-	// fired when push notification is received
-
-	
-	////////
-		
-			
-	/*	var pushNotification;
- pushNotification = window.plugins.pushNotification;
-
-	var push = PushNotification.init({
+		//move_on();	
+					var push = PushNotification.init({
 						android: {
 							senderID: "499804570054"
 						},
@@ -73,15 +60,7 @@
 					
 					
 		if(localStorage.getItem('regid')==null){
-	pushNotification.register(
-    tokenHandler,
-    errorHandler,
-    {
-        "badge":"true",
-        "sound":"true",
-        "alert":"true",
-        "ecb":"onNotificationAPN"
-    });
+	
 			
 			push.on('registration', function(data) {
 				// data.registrationId
@@ -136,7 +115,7 @@ push.on('notification', function(data) {
 push.on('error', function(e) {
     // e.message
 		//alert(e.message);
-});*/
+});
 	
 	
 	function move_on(){
