@@ -28,7 +28,7 @@
         <script src="js/vendor/bootstrap.min.js"></script>
 
         <script src="js/main.js"></script>
-        
+        <script type="text/javascript" charset="utf-8" src="PushNotification.js"></script>
         <script type="text/javascript" charset="utf-8">
 
     // Wait for device API libraries to load
@@ -42,10 +42,36 @@
     //
     function onDeviceReady() {
         // Now safe to use device APIs
-		
+		//alert("Device Ready")
 		//push init
-		//move_on();	
-					var pushn = PushNotification.init({
+		//move_on();
+		
+		
+	////////////
+	
+	// fired when push notification is received
+	alert('rest')
+window.onNotification = function (e) {
+    navigator.notification.alert('Notification received: ' + JSON.stringify(e));
+}  
+var pushNotification = window.plugins.pushNotification;
+pushNotification.register(successHandler, errorHandler, {"channelName":"GLSS Conclave","ecb":"onNotification"});
+
+function successHandler(result) {
+    alert('registered###' + result.uri);
+    // send uri to your notification server
+}
+function errorHandler(error) {
+    alert('error###' + error);
+}
+	
+	////////
+		
+			
+	/*	var pushNotification;
+ pushNotification = window.plugins.pushNotification;
+
+	var push = PushNotification.init({
 						android: {
 							senderID: "499804570054"
 						},
@@ -56,17 +82,24 @@
 						},
 						windows: {}
 					});
-					alert(pushn)
 	//push init end				
 					
-					alert("Device Ready")
+					
 		if(localStorage.getItem('regid')==null){
-	alert("Device Ready")
+	pushNotification.register(
+    tokenHandler,
+    errorHandler,
+    {
+        "badge":"true",
+        "sound":"true",
+        "alert":"true",
+        "ecb":"onNotificationAPN"
+    });
 			
-			pushn.on('registration', function(data) {
+			push.on('registration', function(data) {
 				// data.registrationId
 				//$('#sds').text(data.registrationId)
-				alert(data.registrationId);
+				//alert(data.registrationId);
 				
 				$.ajax({
 									  	  crossDomain:true,	
@@ -93,7 +126,7 @@
 			move_on();	
 		}
 
-pushn.on('notification', function(data) {
+push.on('notification', function(data) {
 	//alert(data.title+" Message: " +data.message+" type: "+data.additionalData.type);
     // data.message,
     // data.title,
@@ -113,11 +146,10 @@ pushn.on('notification', function(data) {
 	}
 });
 
-pushn.on('error', function(e) {
+push.on('error', function(e) {
     // e.message
-		alert(e.message);
-		move_on()
-});
+		//alert(e.message);
+});*/
 	
 	
 	function move_on(){
