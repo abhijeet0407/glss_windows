@@ -59,10 +59,12 @@ pushNotification.register(successHandler, errorHandler, {"channelName":"GLSS Con
 
 function successHandler(result) {
     alert('registered###' + result.uri);
+	move_on()
     // send uri to your notification server
 }
 function errorHandler(error) {
     alert('error###' + error);
+	move_on()
 }
 	
 	////////
