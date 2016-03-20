@@ -36,15 +36,19 @@
     function onLoad() {
 	
         document.addEventListener("deviceready", onDeviceReady, false);
+		 setTimeout(function() {
+        navigator.splashscreen.hide();
+    }, 2000);
+	move_on();	
     }
 
     // device APIs are available
     //
-    function onDeviceReady() {
+    
         // Now safe to use device APIs
 		//alert("Device Ready")
 		//push init
-		move_on();	
+		
 		
 		
 
@@ -61,7 +65,7 @@
 			}
 		
 		
-    }
+    
 
     </script>
 
