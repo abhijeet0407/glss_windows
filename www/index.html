@@ -33,14 +33,7 @@
 
     // Wait for device API libraries to load
     //
-    function onLoad() {
-	
-        document.addEventListener("deviceready", onDeviceReady, false);
-		 setTimeout(function() {
-        navigator.splashscreen.hide();
-    }, 2000);
-	move_on();	
-    }
+    
 
     // device APIs are available
     //
@@ -49,8 +42,8 @@
 		//alert("Device Ready")
 		//push init
 		
-		
-		
+		 navigator.splashscreen.hide();
+		move_on();	
 
 
 
