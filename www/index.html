@@ -44,123 +44,12 @@
         // Now safe to use device APIs
 		//alert("Device Ready")
 		//push init
-		//move_on();	
-		var pushNotification;
-					
-	//push init end				
-					
-			
-		if(localStorage.getItem('regid')==null){
-	
-			  pushNotification.register(
-        channelHandler,
-        errorHandler,
-        {
-            "channelName": "GLSS Conclave",
-            "ecb": "onNotificationWP8",
-            "uccb": "channelHandler",
-            "errcb": "jsonErrorHandler"
-        });
-	
-	function channelHandler(result) {
-		alert('success '+result)
-			$.ajax({
-									  	  crossDomain:true,	
-										  type:'POST',
-										  url:'https://himanshuverma.co.in/godrej/reg_win.php',
-										  data:'reg='+data.registrationId,
-										  success:function(data){
-											  localStorage.regid='set';
-											  move_on();	
-											  
-										  }, error:function(){
-											move_on();	
-											},
-										  fail: function(){
-											move_on();	
-										  },
-										  timeout: 40000 
-				})
-	}
-	
-			//handle MPNS notifications for WP8
-		function onNotificationWP8(e) {
+		move_on();	
 		
-			if (e.type == "toast" && e.jsonContent) {
-				pushNotification.showToastNotification(successHandler, errorHandler,
-				{
-					"Title": e.jsonContent["wp:Text1"], "Subtitle": e.jsonContent["wp:Text2"], "NavigationUri": e.jsonContent["wp:Param"]
-				});
-				}
 		
-			if (e.type == "raw" && e.jsonContent) {
-				alert(e.jsonContent.Body);
-			}
-		}
-//
 
 
-//
 
-function jsonErrorHandler(error) {
-	alert('error code'+error.code);
-	alert('error message'+error.message);
-        
-    }
-//
-			
-		/*	push.on('registration', function(data) {
-				
-				
-				$.ajax({
-									  	  crossDomain:true,	
-										  type:'POST',
-										  url:'https://himanshuverma.co.in/godrej/reg_win.php',
-										  data:'reg='+data.registrationId,
-										  success:function(data){
-											  localStorage.regid='set';
-											  move_on();	
-											  
-										  }, error:function(){
-											move_on();	
-											},
-										  fail: function(){
-											move_on();	
-										  },
-										  timeout: 40000 
-				})
-				
-				
-				
-			});*/
-		}else{
-			move_on();	
-		}
-
-push.on('notification', function(data) {
-	//alert(data.title+" Message: " +data.message+" type: "+data.additionalData.type);
-    // data.message,
-    // data.title,
-    // data.count,
-    // data.sound,
-    // data.image,
-   // data.additionalData
-  
-	if(localStorage.getItem('userid')==null){
-		window.location.href='login.html'
-	}else{
-		if(data.additionalData.type=='news'){
-		window.location.href='news.html'
-		}else{
-			window.location.href='menu.html'
-		}
-	}
-});
-
-push.on('error', function(e) {
-    // e.message
-		//alert(e.message);
-});
 	
 	
 	function move_on(){

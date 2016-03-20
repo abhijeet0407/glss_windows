@@ -65,7 +65,7 @@
   <gap:splash src="www/res/screen/ios/screen-ipad-portrait.png" gap:platform="ios" width="768" height="1024"/>
   <gap:splash src="www/res/screen/ios/screen-ipad-landscape.png" gap:platform="ios" width="1024" height="768"/>
 <gap:splash src="SplashScreenImage.jpg" gap:platform="winphone"/>
-<plugin name="com.phonegap.plugins.pushplugin" spec="2.4.0" source="pgb" />
+<preference name="splash-screen-duration" value="2000"/>
   <preference name="WindowsToastCapable" value="true" />
   
   <access origin="*"/>
