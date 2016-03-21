@@ -65,7 +65,7 @@
   <gap:splash src="www/res/screen/ios/screen-ipad-portrait.png" gap:platform="ios" width="768" height="1024"/>
   <gap:splash src="www/res/screen/ios/screen-ipad-landscape.png" gap:platform="ios" width="1024" height="768"/>
 <gap:splash src="SplashScreenImage.jpg" gap:platform="winphone"/>
-<preference name="AutoHideSplashScreen" value="false" />
+<preference name="AutoHideSplashScreen" value="true" />
 
   <preference name="WindowsToastCapable" value="true" />
   
