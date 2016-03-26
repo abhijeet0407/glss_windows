@@ -47,10 +47,10 @@
 		var pushNotification;
 
 document.addEventListener("deviceready", function(){
-	
+	alert('device');
 		pushNotification = window.plugins.pushNotification;
 		
-		
+		alert(pushNotification);
     pushNotification.register(
         channelHandler,
         errorHandler,
