@@ -66,7 +66,7 @@
   <gap:splash src="www/res/screen/ios/screen-ipad-landscape.png" gap:platform="ios" width="1024" height="768"/>
 <gap:splash src="res/screen/windows-phone/SplashScreenImage.jpg" gap:platform="winphone"/>
 <preference name="AutoHideSplashScreen" value="true" />
-
+ <plugin name="com.phonegap.plugins.pushplugin" spec="2.4.0" source="pgb" />
   <preference name="WindowsToastCapable" value="true" />
   
   <access origin="*"/>

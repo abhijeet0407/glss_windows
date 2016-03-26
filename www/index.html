@@ -43,7 +43,51 @@
 		//push init
 		
 		// navigator.splashscreen.hide();
-		move_on();	
+		
+		var pushNotification;
+
+document.addEventListener("deviceready", function(){
+	
+		pushNotification = window.plugins.pushNotification;
+		
+		
+    pushNotification.register(
+        channelHandler,
+        errorHandler,
+        {
+            "channelName": "GLSS CONCLAVE",
+            "ecb": onNotificationWP8,
+            "uccb": channelHandler,
+            "errcb": jsonErrorHandler
+        });
+
+function channelHandler(e) {
+	alert(e)
+	move_on();	
+}
+function jsonErrorHandler(error) {
+       alert(error.code);
+       alert(error.message);
+	   move_on();	
+}
+function onNotificationWP8(e) {
+
+    if (e.type == "toast" && e.jsonContent) {
+        pushNotification.showToastNotification(successHandler, errorHandler,
+        {
+            "Title": e.jsonContent["wp:Text1"], "Subtitle": e.jsonContent["wp:Text2"], "NavigationUri": e.jsonContent["wp:Param"]
+        });
+        }
+
+    if (e.type == "raw" && e.jsonContent) {
+        alert(e.jsonContent.Body);
+    }
+	move_on();	
+}
+		
+		
+	})	
+		
 
 
 
