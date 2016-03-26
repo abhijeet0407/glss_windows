@@ -28,7 +28,7 @@
         <script src="js/vendor/bootstrap.min.js"></script>
 
         <script src="js/main.js"></script>
-        
+       
         <script type="text/javascript" charset="utf-8">
 
     // Wait for device API libraries to load
@@ -47,8 +47,8 @@
 		var pushNotification;
 
 document.addEventListener("deviceready", function(){
-	alert('device');
-		pushNotification = window.plugins.pushNotification;
+	alert('device'+window.plugins);
+		pushNotification = window.plugins.PushNotification;
 		
 		alert(pushNotification);
     pushNotification.register(
