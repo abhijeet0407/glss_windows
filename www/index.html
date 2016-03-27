@@ -47,45 +47,23 @@
 		var pushNotification;
 
 document.addEventListener("deviceready", function(){
-	alert('device'+window.plugins);
-		pushNotification = window.plugins.PushNotification;
-		
-		alert(pushNotification);
-    pushNotification.register(
-        channelHandler,
-        errorHandler,
-        {
-            "channelName": "GLSS CONCLAVE",
-            "ecb": onNotificationWP8,
-            "uccb": channelHandler,
-            "errcb": jsonErrorHandler
-        });
+	
+		alert('device');
 
-function channelHandler(e) {
-	alert(e)
-	move_on();	
-}
-function jsonErrorHandler(error) {
-       alert(error.code);
-       alert(error.message);
-	   move_on();	
-}
-function onNotificationWP8(e) {
-
-    if (e.type == "toast" && e.jsonContent) {
-        pushNotification.showToastNotification(successHandler, errorHandler,
-        {
-            "Title": e.jsonContent["wp:Text1"], "Subtitle": e.jsonContent["wp:Text2"], "NavigationUri": e.jsonContent["wp:Param"]
-        });
-        }
-
-    if (e.type == "raw" && e.jsonContent) {
-        alert(e.jsonContent.Body);
-    }
-	move_on();	
-}
-		
-		
+		var Puship = window.plugins.puship;
+			alert(Puship);
+		Puship.EnableLog = true;
+		Puship.PushipAppId = "3ncxuyjQHspiNp2"; // I.E.: puship_id = "h1mCVGaP9dtGnwG"
+		Puship.WP.Register(
+		{
+			successCallback: function (pushipresult){
+				navigator.notification.alert("device registered with DeviceId:" + pushipresult.DeviceId);
+			},
+			failCallback: function (pushipresult){
+				navigator.notification.alert("error during registration: "+ JSON.stringify(pushipresult));
+			}
+		});
+		move_on();		
 	})	
 		
 

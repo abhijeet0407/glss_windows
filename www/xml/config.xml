@@ -38,7 +38,7 @@
   <gap:plugin name="org.apache.cordova.vibration"/>
   <gap:plugin name="org.apache.cordova.dialogs" />
   <gap:plugin name="com.ionic.keyboard" />
-  
+  <gap:plugin name="cordova-plugin-puship" source="npm" /> 
   <preference name="android-build-tool" value="gradle" />	
   <icon src="icon.png"/>
   <icon src="www/res/icon/android/icon-36-ldpi.png" gap:platform="android" gap:qualifier="ldpi"/>
@@ -66,10 +66,15 @@
   <gap:splash src="www/res/screen/ios/screen-ipad-landscape.png" gap:platform="ios" width="1024" height="768"/>
 <gap:splash src="SplashScreenImage.jpg" gap:platform="winphone"/>
 <preference name="AutoHideSplashScreen" value="true" />
-<plugin name="com.phonegap.plugins.pushplugin" spec="2.4.0" source="pgb" />
+ <widget 
+	xmlns="http://www.w3.org/ns/widgets" 
+	xmlns:gap="http://phonegap.com/ns/1.0" 
+	id="com.puship.example" 
+	version="1.0.0">
   <preference name="WindowsToastCapable" value="true" />
   
   <access origin="*"/>
+    <access origin="https://cloudapp.puship.com" /> 
   <plugin name="cordova-plugin-whitelist" version="1"/>
   <allow-navigation href="https://himanshuverma.co.in/godrej/*" />
   <allow-intent href="http://*/*"/>
