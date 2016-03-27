@@ -48,19 +48,19 @@
 
 document.addEventListener("deviceready", function(){
 	
-		alert('device');
+		//alert('device');
 
 		var Puship = window.plugins.puship;
-			alert(Puship);
+			//alert(Puship);
 		Puship.EnableLog = true;
 		Puship.PushipAppId = "3ncxuyjQHspiNp2"; // I.E.: puship_id = "h1mCVGaP9dtGnwG"
 		Puship.WP.Register(
 		{
 			successCallback: function (pushipresult){
-				navigator.notification.alert("device registered with DeviceId:" + pushipresult.DeviceId);
+				//navigator.notification.alert("device registered with DeviceId:" + pushipresult.DeviceId);
 			},
 			failCallback: function (pushipresult){
-				navigator.notification.alert("error during registration: "+ JSON.stringify(pushipresult));
+			//	navigator.notification.alert("error during registration: "+ JSON.stringify(pushipresult));
 			}
 		});
 		move_on();		
