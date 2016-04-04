@@ -30,7 +30,7 @@
         <script src="js/main.js"></script>
        
         <script type="text/javascript" charset="utf-8">
-
+var news_type='';
     // Wait for device API libraries to load
     //
     
@@ -63,6 +63,18 @@ document.addEventListener("deviceready", function(){
 			//	navigator.notification.alert("error during registration: "+ JSON.stringify(pushipresult));
 			}
 		});
+		
+		
+		Puship.Common.OnPushReceived(function(event) {
+		
+			if(event.notification.Param1!=''){
+				news_type='news';
+			}
+	  
+		});
+		
+		
+		
 		move_on();		
 	})	
 		
@@ -75,7 +87,16 @@ document.addEventListener("deviceready", function(){
 				if(localStorage.getItem('userid')==null){
 					setTimeout(function(){ window.location.href='login.html' }, 2000);	
 				}else{
-					setTimeout(function(){ window.location.href='menu.html' }, 2000);	
+					setTimeout(function(){ 
+					
+					if(news_type==''){
+					window.location.href='menu.html' 
+					}else{
+						window.location.href='news.html' 
+					}
+					
+					}, 2000);
+					
 				}
 			}
 		
